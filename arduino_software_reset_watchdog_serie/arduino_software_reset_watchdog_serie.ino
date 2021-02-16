@@ -38,7 +38,7 @@ void loop() {
     char ch = Serial.read();  
     if (ch == '0') {
       Serial.println("arduino va redémarrer");
-      delay(1000); // wait 1 second
+      delay(1000); 
       reboot();
     }
   }
