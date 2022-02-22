@@ -3,7 +3,6 @@
 Petits trucs utiles pour arduino
 
 **arduino_software_reset_watchdog**  
-
 Méthode pour déclencher un reset hardware depuis du code.
 
 **arduino_software_reset_watchdog_serie**  
