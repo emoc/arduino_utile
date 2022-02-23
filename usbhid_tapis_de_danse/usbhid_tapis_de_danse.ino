@@ -1,3 +1,17 @@
+/* Utilisation d'un tapis de danse USB HID 
+    Workshop Arcade & Craft & Alt Ctrl @ Ecole de Design Nantes Atlantique
+    21 / 25 fév. 2022 / pierre@lesporteslogiques.net
+
+    arduino 1.8.5 @ kirin / Debian 9.5 stretch
+
+    Matériel
+      * Arduino UNO
+      * shield USB HOST (Arduino): https://www.arduino.cc/en/Main/ArduinoUSBHostShield&lang=
+      
+    Bibliothèques à installer depuis github :
+      + lib. USB Host Shield 2.0  https://github.com/felis/USB_Host_Shield_2.0
+*/
+
 #include <usbhid.h>
 #include <hiduniversal.h>
 #include <usbhub.h>
