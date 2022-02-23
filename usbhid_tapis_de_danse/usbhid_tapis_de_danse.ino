@@ -40,7 +40,7 @@ void loop() {
   Usb.Task();
 
   /* *************************************
-            Mapping des boutons
+     Mapping des boutons du tapis de danse
 
       Select : 9       Start : 10
 
@@ -53,14 +53,28 @@ void loop() {
          5         2         6
 
    * *************************************/
+  /*
+    JoyEvents.button_up_id; et JoyEvents.button_down_id;
+    renvoient la valeur du bouton quand un évènement bouton est détecté (down = pressé, up = relaché)
+    Sinon, ils renvoient 99, signifiant qu'il n'y a pas eu de changement (c'est moche mais ça fonctionne)
+    l'état des boutons est conservé dans le tableau etat_bouton
+    Les index correspondent aux numéros des boutons
+    L'index 0 ne correspond à rien!
+    etat_bouton_avant contient l'état des boutons dans la précédente itération
+    donc les actions sont à effectuer en fonctiondes valeurs du tableau etat_bouton
+   */
 
+  // Récupérer les évènements de bouton
   int bouton_up = JoyEvents.button_up_id;
   int bouton_down = JoyEvents.button_down_id;
 
-  etat_bouton[bouton_up] = 0;
-  etat_bouton[bouton_down] = 1;
+  // Mettre à jour le tableau des boutons
+  if (bouton_up < 99) etat_bouton[bouton_up] = 0;
+  if (bouton_down < 99) etat_bouton[bouton_down] = 1;
 
   boolean changement_etat = false;
+
+  // Comparer pour voir s'il y a eu des changements
   for (int n = 0; n < 11; n++) {
     if (etat_bouton[n] != etat_bouton_avant[n]) {
       if (etat_bouton[n] == 1) {
@@ -71,19 +85,21 @@ void loop() {
         Serial.print("bouton relâché : ");
         Serial.println(n);
       }
-
-      //printEtatGlobalBouton();
-      //etat_bouton_avant[n] = etat_bouton
       changement_etat = true;
     }
   }
 
+  // Si l'état a changé, les états des boutons deviennent les états précédents
   if (changement_etat) {
     printEtatGlobalBouton();
     for (int n = 0; n < 11; n++) {
       etat_bouton_avant[n] = etat_bouton[n];
     }
   }
+
+  // Actions !
+
+  
 }
 
 void printEtatGlobalBouton() {
