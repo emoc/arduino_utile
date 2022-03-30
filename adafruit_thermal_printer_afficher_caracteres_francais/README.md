@@ -84,9 +84,9 @@ void imprimerAvecCaracteresSpeciaux(String test) {
       special = true;
       byte carac = test[i + 1];
 
-      Serial.print(byte(test[i]), HEX);
-      Serial.print(" ");
-      Serial.println(carac, HEX);
+      // Serial.print(byte(test[i]), HEX);
+      // Serial.print(" ");
+      // Serial.println(carac, HEX);
 
       i += 2;
 
