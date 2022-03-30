@@ -22,3 +22,6 @@ Utilisation d'un tapis de danse USB avec un [shield usb host](https://www.arduin
 
 **declencher_sons_grove_serial_mp3_v3**  
 Déclencher simplement la lecture de sons sur un module grove mp3 v3 avec carte microSD.
+
+**communication_arduino_processing_dans_les_deux_sens**  
+Envoyer des données de 4 capteurs vers processing, recevoir des caractères de commande dans arduino 
