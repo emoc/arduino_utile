@@ -25,3 +25,6 @@ Déclencher simplement la lecture de sons sur un module grove mp3 v3 avec carte 
 
 **communication_arduino_processing_dans_les_deux_sens**  
 Envoyer des données de 4 capteurs vers processing, recevoir des caractères de commande dans arduino 
+
+**adafruit_thermal_printer_afficher_caracteres_francais**
+Tout est dans le titre
