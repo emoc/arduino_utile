@@ -48,9 +48,10 @@ printer.write(0xAF);
 
 ### Méthode mieux
 
-Plus générale mais améliorable (les ligatures ne sont pas traitées, entre autre), en utilisant une fonction qui filtre les chaînes de caractères et envoie des octets avec `serial.write()`
+Plus générale, en utilisant une fonction qui filtre les chaînes de caractères et envoie des octets avec `serial.write()`
 
-**A TESTER!** (NB : Seuls les caractères les plus communs sont transformés, tout le code page n'y est pas!)
+(NB : améliorable : seuls les caractères les plus communs sont transformés, tout le code page n'y est pas! Les ligatures ne sont pas traitées, entre autre)  
+(NBB : mieux vaudrait utiliser le code page CP850, qui comprend plus de caractères accentuées)  
 
 ```c
 // Imprimer les caractères accentués du français
@@ -118,3 +119,9 @@ void imprimerAvecCaracteresSpeciaux(String test) {
   }
 }
 ```
+
+Pour qui ?  
+Pour toutes les personnes qui utilisent une imprimante thermique.  
+Pour toutes les personnes francophones qui utilisent une mini-imprimante thermique.  
+Pour toutes les personnes francophones qui utilisent une mini-imprimante thermique avec un arduino et sont sensibles à l'accentuation.  
+
